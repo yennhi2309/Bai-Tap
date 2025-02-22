@@ -13,6 +13,14 @@ bool kiemTraSoNguyenTo(int n) {
 	return true;
 }
 
+bool kiemTraNamNhuan(int nam) {
+	if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0)) {
+		return true;
+	}
+	return false;
+}
+
+
 void menu() {
 	int luaChon;
 	do {
@@ -39,6 +47,19 @@ void menu() {
 				}
 			}
 		}
+
+		else if (luaChon == 2) {
+			int nam;
+			cout << "Nhập một năm: ";
+			cin >> nam;
+			if (kiemTraNamNhuan(nam)) {
+				cout << nam << " là năm nhuận." << endl;
+			}
+			else {
+				cout << nam << " không phải là năm nhuận." << endl;
+			}
+		}
+
 		
 		else if (luaChon == 3) {
 			cout << "Thoat chuong trinh." << endl;
